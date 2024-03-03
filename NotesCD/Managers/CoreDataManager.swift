@@ -8,8 +8,9 @@
 import Foundation
 import CoreData
 
+// убрать модели отсюда, написать дженерик Entity
 
-class CoreDataManager{
+final class CoreDataManager {
     
     static let shared = CoreDataManager()
     var notes = [Note]()
@@ -22,20 +23,20 @@ class CoreDataManager{
     // MARK: - Core Data stack
     
     lazy var persistentContainer: NSPersistentContainer = {
-        
         let container = NSPersistentContainer(name: "NotesCD")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
-                
-                fatalError("Unresolved error \(error), \(error.userInfo)")
+            guard let error else {
+                return
             }
+            
+            fatalError("Unresolved error \(error.localizedDescription)")
         })
         return container
     }()
     
     // MARK: - Core Data Saving support
     
-    func saveContext () {
+    func saveContext() {
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {
@@ -47,16 +48,15 @@ class CoreDataManager{
         }
     }
     
-    
     //method to get all notes from database
-    func fetchAllNotes(){
+    func fetchAllNotes() {
         let request = Note.fetchRequest()
-        if let notes = try? persistentContainer.viewContext.fetch(request){
+        if let notes = try? persistentContainer.viewContext.fetch(request) {
             self.notes = notes
         }
     }
     
-    func addNewNote(text: String, title: String){
+    func addNewNote(text: String, title: String) {
         let note = Note(context: persistentContainer.viewContext)
         note.id = UUID().uuidString
         note.title = title

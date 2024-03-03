@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D2F904452B88F26A0025E8B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F904442B88F26A0025E8B6 /* AppDelegate.swift */; };
-		D2F904492B88F26A0025E8B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F904482B88F26A0025E8B6 /* ViewController.swift */; };
+		D2F904492B88F26A0025E8B6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F904482B88F26A0025E8B6 /* MainViewController.swift */; };
 		D2F9044F2B88F26A0025E8B6 /* NotesCD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2F9044D2B88F26A0025E8B6 /* NotesCD.xcdatamodeld */; };
 		D2F904512B88F26C0025E8B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F904502B88F26C0025E8B6 /* Assets.xcassets */; };
 		D2F904542B88F26C0025E8B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F904522B88F26C0025E8B6 /* LaunchScreen.storyboard */; };
@@ -16,7 +16,7 @@
 		D2F9045E2B88F2FF0025E8B6 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F9045C2B88F2FF0025E8B6 /* Note+CoreDataProperties.swift */; };
 		D2F904612B88F3470025E8B6 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F904602B88F3470025E8B6 /* CoreDataManager.swift */; };
 		D2F904632B88FD0B0025E8B6 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F904622B88FD0B0025E8B6 /* AddViewController.swift */; };
-		D2F904672B9391C40025E8B6 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F904662B9391C40025E8B6 /* NavigationController.swift */; };
+		D2F904672B9391C40025E8B6 /* NavigationController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F904662B9391C40025E8B6 /* NavigationController+.swift */; };
 		D2F904692B9398E50025E8B6 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F904682B9398E50025E8B6 /* ReadViewController.swift */; };
 		D2F9046D2B94E0160025E8B6 /* NonesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F9046C2B94E0160025E8B6 /* NonesTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -24,7 +24,7 @@
 /* Begin PBXFileReference section */
 		D2F904412B88F26A0025E8B6 /* NotesCD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesCD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F904442B88F26A0025E8B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D2F904482B88F26A0025E8B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D2F904482B88F26A0025E8B6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D2F9044E2B88F26A0025E8B6 /* NotesCD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NotesCD.xcdatamodel; sourceTree = "<group>"; };
 		D2F904502B88F26C0025E8B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2F904532B88F26C0025E8B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -33,7 +33,7 @@
 		D2F9045C2B88F2FF0025E8B6 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D2F904602B88F3470025E8B6 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		D2F904622B88FD0B0025E8B6 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
-		D2F904662B9391C40025E8B6 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		D2F904662B9391C40025E8B6 /* NavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationController+.swift"; sourceTree = "<group>"; };
 		D2F904682B9398E50025E8B6 /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
 		D2F9046C2B94E0160025E8B6 /* NonesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonesTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -49,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F6CCC3D2B95179600B99128 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D2F904602B88F3470025E8B6 /* CoreDataManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		D2F904382B88F26A0025E8B6 = {
 			isa = PBXGroup;
 			children = (
@@ -69,22 +77,22 @@
 			isa = PBXGroup;
 			children = (
 				D2F904642B93596D0025E8B6 /* AppFile */,
-				D2F904652B93918D0025E8B6 /* Extension */,
-				D2F9045F2B88F30F0025E8B6 /* Model */,
 				D2F9046A2B94DFA70025E8B6 /* Controllers */,
+				D2F9045F2B88F30F0025E8B6 /* Entities */,
+				D2F904652B93918D0025E8B6 /* Extensions */,
+				3F6CCC3D2B95179600B99128 /* Managers */,
 			);
 			path = NotesCD;
 			sourceTree = "<group>";
 		};
-		D2F9045F2B88F30F0025E8B6 /* Model */ = {
+		D2F9045F2B88F30F0025E8B6 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				D2F9044D2B88F26A0025E8B6 /* NotesCD.xcdatamodeld */,
-				D2F904602B88F3470025E8B6 /* CoreDataManager.swift */,
 				D2F9045B2B88F2FF0025E8B6 /* Note+CoreDataClass.swift */,
 				D2F9045C2B88F2FF0025E8B6 /* Note+CoreDataProperties.swift */,
 			);
-			path = Model;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		D2F904642B93596D0025E8B6 /* AppFile */ = {
@@ -98,19 +106,19 @@
 			path = AppFile;
 			sourceTree = "<group>";
 		};
-		D2F904652B93918D0025E8B6 /* Extension */ = {
+		D2F904652B93918D0025E8B6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D2F904662B9391C40025E8B6 /* NavigationController.swift */,
+				D2F904662B9391C40025E8B6 /* NavigationController+.swift */,
 			);
-			path = Extension;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		D2F9046A2B94DFA70025E8B6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				D2F9046B2B94DFCD0025E8B6 /* Components */,
-				D2F904482B88F26A0025E8B6 /* ViewController.swift */,
+				D2F904482B88F26A0025E8B6 /* MainViewController.swift */,
 				D2F904622B88FD0B0025E8B6 /* AddViewController.swift */,
 				D2F904682B9398E50025E8B6 /* ReadViewController.swift */,
 			);
@@ -196,9 +204,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2F9044F2B88F26A0025E8B6 /* NotesCD.xcdatamodeld in Sources */,
-				D2F904492B88F26A0025E8B6 /* ViewController.swift in Sources */,
+				D2F904492B88F26A0025E8B6 /* MainViewController.swift in Sources */,
 				D2F904632B88FD0B0025E8B6 /* AddViewController.swift in Sources */,
-				D2F904672B9391C40025E8B6 /* NavigationController.swift in Sources */,
+				D2F904672B9391C40025E8B6 /* NavigationController+.swift in Sources */,
 				D2F904692B9398E50025E8B6 /* ReadViewController.swift in Sources */,
 				D2F9046D2B94E0160025E8B6 /* NonesTableViewCell.swift in Sources */,
 				D2F9045D2B88F2FF0025E8B6 /* Note+CoreDataClass.swift in Sources */,

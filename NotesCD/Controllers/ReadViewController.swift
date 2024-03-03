@@ -80,7 +80,7 @@ class ReadViewController: UIViewController {
     }
     
     private func configNaviationBar(){
-        navigationController?.changeColorTitle(color: .gray)
+        navigationController?.configureTitleTextAttributes(color: .gray)
         guard let noteDate = note?.date else { return self.title = "Your Note"}
         title = "\(dateFormater.string(from: noteDate))"
         

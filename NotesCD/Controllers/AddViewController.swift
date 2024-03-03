@@ -42,7 +42,6 @@ class AddViewController: UIViewController {
         return text
     }()
     
-    
     lazy var buttonSave: UIButton = {
         let btn = UIButton(type: .system, primaryAction: actionSaveNote)
         btn.setTitle("Save", for: .normal)
@@ -55,16 +54,15 @@ class AddViewController: UIViewController {
         return btn
     }()
     
-    
     lazy var actionSaveNote = UIAction { _ in
         if self.note != nil{
-            self.note?.updateNote(newTitle: self.titleTextField.text ?? "", newText: self.textView.text)
+            self.note?.updateNote(newTitle: self.titleTextField.text ?? "", 
+                                  newText: self.textView.text)
         } else {
             self.manager.addNewNote(text: self.textView.text , title: self.titleTextField.text ?? "")
         }
         self.navigationController?.popViewController(animated: true)
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,8 +70,8 @@ class AddViewController: UIViewController {
         setupUI()
     }
     
-    
     private func setupUI(){
+        // extension
         view.addSubview(titleTextField)
         view.addSubview(textView)
         view.addSubview(buttonSave)
@@ -94,7 +92,7 @@ class AddViewController: UIViewController {
     }
     
     private func configNavigationBar(){
-        navigationController?.changeColorTitle(color: .black)
+        navigationController?.configureTitleTextAttributes(color: .black)
         title = "Edit Note"
         navigationItem.leftBarButtonItem = UIBarButtonItem(systemItem: .close, primaryAction: UIAction(handler: { _ in
             self.navigationController?.popViewController(animated: true)
@@ -102,6 +100,4 @@ class AddViewController: UIViewController {
         view.backgroundColor = UIColor(red: 242/255, green: 232/255, blue: 247/255, alpha: 1)
         
     }
-    
-    
 }

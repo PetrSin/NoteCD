@@ -26,7 +26,7 @@ extension Note {
 extension Note : Identifiable {
 
     //method for updating a note from the database
-    func updateNote(newTitle: String, newText: String){
+    func updateNote(newTitle: String, newText: String) {
         self.title = newTitle
         self.text = newText
         self.date = Date()

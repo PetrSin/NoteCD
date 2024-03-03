@@ -7,39 +7,43 @@
 
 import UIKit
 
-class NonesTableViewCell: UITableViewCell {
+final class NonesTableViewCell: UITableViewCell {
 
-    
-    var titleLabel: UILabel = {
+    // private
+    let titleLabel: UILabel = {
         let view = UILabel()
         view.font = .systemFont(ofSize: 10)
         view.textColor = .black
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-   
-    var dateLabel: UILabel = {
+    // private
+    let dateLabel: UILabel = {
         let view = UILabel()
         view.font = .systemFont(ofSize: 17)
         view.textColor = .gray
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        if selected == true{
-            contentView.backgroundColor = .gray
-        }
+        // исправлено
+        contentView.backgroundColor = selected ? .gray : .white
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        configCell()
+        setupUI()
     }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configCell(){
+//    func configure(with model: NonesTableViewCellModel)
+    
+    private func setupUI() {
         contentView.backgroundColor = .white
         contentView.layer.cornerRadius = 10.0
         
@@ -47,13 +51,10 @@ class NonesTableViewCell: UITableViewCell {
         contentView.addSubview(dateLabel)
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: centerXAnchor),
-            titleLabel.heightAnchor.constraint(equalToConstant: 13),
-            titleLabel.widthAnchor.constraint(equalToConstant: 40)
-        
+            titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20)
         ])
     }
     
-
+// отступы
 }

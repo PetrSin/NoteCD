@@ -14,31 +14,29 @@ class ViewController: UIViewController {
     private lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .insetGrouped)
         table.translatesAutoresizingMaskIntoConstraints = false
+        table.backgroundColor = UIColor(red: 242/255, green: 232/255, blue: 247/255, alpha: 1)
         table.delegate = self
         table.dataSource = self
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
+        table.register(NonesTableViewCell.self, forCellReuseIdentifier: "cell")
         return table
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
     }
     
-    
     private func setupUI(){
+        navigationController?.changeColorTitle(color: .black)
         navigationItem.title = "Note"
         navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .add, primaryAction: UIAction(handler: { _ in
-            let addVC = AddViewController()
-            self.navigationController?.pushViewController(addVC, animated: true)
+            self.navigationController?.pushViewController(AddViewController(), animated: true)
         }))
-        
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.black
         
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
@@ -48,8 +46,6 @@ class ViewController: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
-    
-    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource{
@@ -58,13 +54,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = manager.notes[indexPath.row].title
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! NonesTableViewCell
+        cell.titleLabel.text = manager.notes[indexPath.row].title
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = AddViewController()
+        let vc = ReadViewController()
         vc.note = manager.notes[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }

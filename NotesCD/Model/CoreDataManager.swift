@@ -66,5 +66,4 @@ class CoreDataManager{
         saveContext()
         fetchAllNotes()
     }
-    
 }
